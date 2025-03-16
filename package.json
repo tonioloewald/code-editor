@@ -1,5 +1,5 @@
 {
-  "name": "code-editor",
+  "name": "xin-code-editor",
   "version": "0.0.1",
   "main": "./dist/blueprint.js",
   "exports": "./dist/blueprint.js",
