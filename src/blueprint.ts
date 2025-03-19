@@ -6,9 +6,6 @@ Information about the `<code-editor>` component blueprint.
 
 import type { XinBlueprint, PartsMap } from 'xinjs'
 import { compareSemanticVersion } from './compare-semantic-version'
-interface ToggleParts extends PartsMap {
-  valueHolder: HTMLInputElement
-}
 
 // v0.8.5 required for async blueprints
 const REQUIRED_VERSION = '0.8.5'
@@ -17,7 +14,7 @@ const ACE_BASE_URL = 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.23.2/'
 const DEFAULT_THEME = 'ace/theme/tomorrow'
 
 export const blueprint: XinBlueprint = async (tag, factory) => {
-  const { Component, elements, vars, version } = factory
+  const { Component, elements, version } = factory
   const { slot } = elements
 
   const scriptTag = (url: string): Promise<any> => {
@@ -60,7 +57,7 @@ export const blueprint: XinBlueprint = async (tag, factory) => {
       super.connectedCallback()
 
       if (!this.source) {
-        this.source = this.innerHTML || ''
+        this.source = (this.innerHTML || '').trim() + '\n'
       }
 
       this.editor = ace.edit(this, {

@@ -1,6 +1,6 @@
 {
   "name": "xin-code-editor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/blueprint.js",
   "exports": "./dist/blueprint.js",
   "type": "module",
